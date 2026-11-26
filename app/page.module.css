@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+}
+
+.CanvasParent {
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 0; */
+  width: 100vw;
+  height: 100vw;
+  z-index: 9999;
+}
+
+.Canvas {
+  position: absolute;   /* or fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;          /* higher than other elements */
+  pointer-events: none; /* optional – lets you click elements under it */
+  /* background-color: red; */
+}
+
+.ImageContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.ImageWrapper {
+  width: 750px;
+  margin-right: auto;
+  margin-top: 0;          /* sticks it to the top */
+}
+
+.Image {
+  width: 750px;
+  height: auto;
+  display: block;
+}
+
+.Title {
+  font-size: 5vh;
+  font-family: var(--font-dancing), cursive;
+  margin: -2vh 2vh 2vh 2vh;
+}
