@@ -7,6 +7,7 @@ import { useEffect, useRef } from "react";
 import { ScrollControls, useScroll, useGLTF } from "@react-three/drei";
 import Image from "next/image";
 import background from "@/public/background.jpg";
+import { FaAngleDown } from 'react-icons/fa'
 
 const Model = () => {
   const MeshRef = useRef<THREE.Mesh>(null);
@@ -37,7 +38,7 @@ const Model = () => {
     <>
       <mesh>
         {/* <group position={[0, -1.5, 0]}> */}
-          <primitive object={scene} scale={0.04} ref={MeshRef} />
+          <primitive object={scene} scale={0.028} ref={MeshRef} />
           <meshStandardMaterial color={"red"} />
         {/* </group> */}
       </mesh>
@@ -53,9 +54,11 @@ export default function Home() {
           <Image alt="" src={background} className={style.Image} />
         </div>
       </div>
-      <div className={style.Title}>Good morning</div>
+      {/* <div className={style.Title}>Good morning</div> */}
       <div className={style.CanvasParent}>
-        <Canvas className={style.Canvas}>
+        <Canvas
+          className={style.Canvas}
+        >
           <ambientLight intensity={1} />
           <directionalLight position={[2, 2, 2]} intensity={1} />
           <ScrollControls pages={2}>
@@ -63,6 +66,13 @@ export default function Home() {
           </ScrollControls>
         </Canvas>
       </div>
+      <div className={style.TextBox}>
+        <p className={style.MainText}>Your coffee is ready!</p>
+        <p className={style.SecondText}>Welcome to our cafe. Hear every sip is desgned to be enjoyed.</p>
+        <p className={style.ThirdText}>Take your coffee now.</p>
+        <FaAngleDown className={style.AngleDown} />
+      </div>
+      <div className={style.ProductsSample}></div>
     </div>
   );
 }
